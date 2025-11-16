@@ -46,3 +46,13 @@ async def query_travel_agent(query: QueryRequest):
         import traceback
         traceback.print_exc()  # PRINT FULL ERROR
         return JSONResponse(status_code=500, content={"error": str(e)})
+    
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000)),
+        reload=False
+    )
