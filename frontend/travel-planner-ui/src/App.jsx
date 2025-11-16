@@ -32,7 +32,7 @@ export default function App() {
     setParsedDays([]);
 
     try {
-      const res = await axios.post("https://travel-planner-ai-backend.onrender.com//query", { question: query });
+      const res = await axios.post("https://travel-planner-ai-backend.onrender.com/query", { question: query });
       const text = res.data.answer;
 
       setAnswer(text);
